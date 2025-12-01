@@ -1,7 +1,8 @@
 # Internship Recommendation System -
+A full-stack web application to collect, manage, and recommend internships.
 # Contributing Guidelines 
 
-Thank you for your interest in contributing!
+Thank you for your interest in contributing!  
 This project welcomes developers of all skill levels, and this guide will help you get started smoothly
 
 ## Prerequisites 
@@ -20,42 +21,50 @@ If you're new to any of these, don’t worry -the steps below walk you through e
 
 ## Fork The Repository 
 
-Click the Fork button at the top of the repository.
-
+Click the Fork button at the top of the repository.  
 This creates your copy that you can safely experiment with.
 
 ## Clone Your Fork
 
-`git clone https://github.com/traitor09/todo.git
-cd todo`
-
+```bash
+git clone https://github.com/traitor09/todo.git
+cd todo
+```
 ## Create a new Branch
 Always make changes in a separate branch instead of main.
 
-`git checkout -b feature/my-new-feature`
+```bash
+git checkout -b feature/my-new-feature
+```
 
 
 Use clear branch names:
 
-feature/... for new features
-fix/... for bug fixes
-docs/... for documentation
-refactor/... for improvements
+`feature/...` for new features  
+`fix/...` for bug fixes  
+`docs/...` for documentation  
+`refactor/...` for improvements
 
 ## Setting Up Project Locally 
 ### Frontend
 
 Navigate to the frontend folder:
 
-`cd frontend`
+```bash
+cd frontend
+```
 
 Install dependencies:
 
-`npm install`
+```bash
+npm install
+```
 
 Start the development server:
 
-`npm run dev`
+```bash
+npm run dev
+```
 
 The frontend should now be running locally.
 
@@ -63,7 +72,9 @@ The frontend should now be running locally.
 
 Navigate to the backend folder:
 
-`cd backend`
+```bash
+cd backend
+```
 
 (Optional) Create a virtual environment:
 
@@ -85,17 +96,30 @@ Navigate to the backend folder:
   venv\Scripts\activate.bat
   ```
 
-Install Python dependencies:
+## Install Python dependencies:
 
-`pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+```
 
-Set up the database:
+## Setup Environment Variables
 
-`python setup_database.py`
+```bash
+MONGO_CONNECTION_STRING=<your_mongodb_connection_string>
+MONGO_DB_NAME=<your_database_name>
+```
+#### *Replace <your_mongodb_connection_string> and <your_database_name> with your actual MongoDB URI and database name.
+## Set up the database:
 
-Run the backend server:
+```bash
+python setup_database.py
+```
 
-`python app.py`
+## Run the backend server:
+
+```bash
+python app.py
+```
 
 ## Ensure
 While contributing, please:
@@ -110,10 +134,11 @@ Example commit message:
 `Add skill preprocessing step to recommendation logic`
 
 ## Commit and Push
-`git add .
+```bash
+git add .
 git commit -m "Clear and descriptive message"
 git push origin feature/my-new-feature
-`
+```
 ## Open a Pull Request
 Go to your fork on GitHub.
 Click Compare & pull request.
