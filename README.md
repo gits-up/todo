@@ -67,9 +67,23 @@ Navigate to the backend folder:
 
 (Optional) Create a virtual environment:
 
-`python -m venv venv
-source venv/bin/activate   # Linux/macOS
-venv\Scripts\activate      # Windows`
+- **Linux/macOS**
+  ```bash
+  python -m venv venv
+  source venv/bin/activate
+  ```
+
+- **Windows (PowerShell)**
+  ```powershell
+  python -m venv venv
+  .\venv\Scripts\Activate.ps1
+  ```
+
+- **Windows (CMD)**
+  ```cmd
+  python -m venv venv
+  venv\Scripts\activate.bat
+  ```
 
 Install Python dependencies:
 
