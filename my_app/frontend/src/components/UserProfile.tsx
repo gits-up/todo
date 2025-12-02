@@ -3,16 +3,16 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { 
-  User, 
-  Eye, 
-  Lock, 
-  LogOut, 
+import {
+  Eye,
+  Lock,
+  LogOut,
   MapPin,
   Edit,
   ChevronDown,
   ChevronUp
 } from "lucide-react";
+import { useUser, useClerk } from "@clerk/clerk-react";
 
 interface UserProfileProps {
   isMobile?: boolean;
@@ -22,43 +22,38 @@ interface UserProfileProps {
 
 export const UserProfile = ({ isMobile = false, isOpen = true, onToggle }: UserProfileProps) => {
   const [isExpanded, setIsExpanded] = useState(!isMobile);
+  const { user, isLoaded } = useUser();
+  const { signOut } = useClerk();
 
-  // TODO: Replace with actual user data from backend
+  if (!isLoaded) return null;
+  if (isMobile && !isOpen) return null;
+
   const userData = {
-    id: "874046",
-    name: "User",
-    age: "21 Yrs",
-    location: "Agra, UTTAR PRADESH",
+    id: user.id,
+    name: user.fullName || user.username || "Intern",
+    age: "N/A",
+    location: user.primaryEmailAddress?.emailAddress || "N/A",
     profileCompletion: 100,
-    avatar: "/placeholder-avatar.jpg"
+    avatar: user.imageUrl
   };
 
   const handleToggle = () => {
-    if (isMobile && onToggle) {
-      onToggle();
-    } else {
-      setIsExpanded(!isExpanded);
-    }
+    if (isMobile && onToggle) onToggle();
+    else setIsExpanded(!isExpanded);
   };
 
-  if (isMobile && !isOpen) return null;
-
   return (
-    <Card className={`${isMobile ? 'absolute top-16 right-4 w-80 z-50 shadow-xl' : 'w-full'} bg-card border-border`}>
+    <Card className={`${isMobile ? "absolute top-16 right-4 w-80 z-50 shadow-xl" : "w-full"} bg-card border-border`}>
       <CardContent className="p-4">
-        {/* Candidate ID Badge */}
+        {/* ID section */}
         <div className="flex items-center justify-between mb-4">
           <div className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium flex items-center gap-2">
-            Candidate ID {userData.id}
+            User ID: {userData.id.slice(0, 8)}
             <Edit className="w-4 h-4 cursor-pointer" />
           </div>
+
           {!isMobile && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleToggle}
-              className="p-1"
-            >
+            <Button variant="ghost" size="sm" onClick={handleToggle} className="p-1">
               {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
             </Button>
           )}
@@ -66,21 +61,19 @@ export const UserProfile = ({ isMobile = false, isOpen = true, onToggle }: UserP
 
         {(isExpanded || isMobile) && (
           <>
-            {/* User Info */}
+            {/* User info */}
             <div className="flex items-center gap-3 mb-4">
               <Avatar className="w-16 h-16">
-                <AvatarImage src={userData.avatar} alt={userData.name} />
-                <AvatarFallback className="bg-primary/10 text-primary font-semibold">
-                  {userData.name.split(' ').map(n => n[0]).join('')}
-                </AvatarFallback>
+                <AvatarImage src={userData.avatar} />
+                <AvatarFallback>{userData.name.slice(0,2).toUpperCase()}</AvatarFallback>
               </Avatar>
               <div>
                 <h3 className="font-semibold text-foreground">{userData.name}</h3>
-                <p className="text-sm text-muted-foreground">{userData.age}</p>
+                <p className="text-sm text-muted-foreground">{userData.location}</p>
               </div>
             </div>
 
-            {/* Profile Completion */}
+            {/* Profile completion */}
             <div className="mb-4">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-sm text-muted-foreground">Profile Completed:</span>
@@ -89,45 +82,23 @@ export const UserProfile = ({ isMobile = false, isOpen = true, onToggle }: UserP
               <Progress value={userData.profileCompletion} className="h-2" />
             </div>
 
-            {/* Location */}
-            <div className="flex items-center gap-2 mb-6 text-sm text-muted-foreground">
-              <MapPin className="w-4 h-4 text-primary" />
-              {userData.location}
-            </div>
-
-            {/* Action Buttons */}
+            {/* Action buttons */}
             <div className="space-y-2">
-              <Button
-                variant="ghost"
-                className="w-full justify-start text-accent hover:text-accent-foreground hover:bg-accent/10"
-                onClick={() => {
-                  // TODO: Implement view profile functionality
-                  console.log('View Profile clicked');
-                }}
-              >
+              <Button variant="ghost" className="w-full justify-start">
                 <Eye className="w-4 h-4 mr-2" />
                 View Profile / CV
               </Button>
-              
-              <Button
-                variant="ghost"
-                className="w-full justify-start text-accent hover:text-accent-foreground hover:bg-accent/10"
-                onClick={() => {
-                  // TODO: Implement change password functionality
-                  console.log('Change Password clicked');
-                }}
-              >
+
+              <Button variant="ghost" className="w-full justify-start">
                 <Lock className="w-4 h-4 mr-2" />
                 Change Password
               </Button>
-              
+
+              {/* REAL SIGN OUT */}
               <Button
                 variant="ghost"
-                className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/10"
-                onClick={() => {
-                  // TODO: Implement sign out functionality
-                  console.log('Sign Out clicked');
-                }}
+                className="w-full justify-start text-destructive"
+                onClick={() => signOut({ redirectUrl: "/sign-in" })}
               >
                 <LogOut className="w-4 h-4 mr-2" />
                 Sign Out
