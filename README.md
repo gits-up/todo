@@ -3,8 +3,9 @@ A full-stack web application to collect, manage, and recommend internships.
 # Contributing Guidelines 
 
 Thank you for your interest in contributing! Join our [Discord Community](https://discord.gg/7YgmBhS3h) 💜  
-This project welcomes developers of all skill levels, and this guide will help you get started smoothly
-
+This project welcomes developers of all skill levels, and this guide will help you get started smoothly.  
+  
+To recognize the amazing people who help grow this project, we award badges : [See here!](https://traitor09.github.io/todo/)
 ## Prerequisites 
 
 Before contributing, please ensure you have:
