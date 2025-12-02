@@ -7,10 +7,19 @@ import { InternshipForm } from "@/components/InternshipForm";
 import { Notifications } from "@/components/Notifications";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useUser } from "@clerk/clerk-react";
+
 
 const Index = () => {
+  const { isLoaded } = useUser();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("internship-opportunities");
+
+  // Prevent UI flashing
+  if (!isLoaded) {
+    return <div className="p-6 text-center">Loading...</div>;
+  }
 
   const tabs = [
     { id: "current-status", label: "My Current Status", disabled: true },
