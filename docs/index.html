@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contributing to INTERNIFY</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .header p {
+      font-size: 1.125rem;
+      color: #64748b;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1280px) {
+      .layout {
+        grid-template-columns: 60% 40%;
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-content {
+      padding: 3.5rem;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      color: #2563eb;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .section-title:first-child {
+      margin-top: 0;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .text-muted {
+      color: #64748b;
+    }
+
+
+    .tier-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .tier-row img {
+      width: 50px;
+      margin: 10px 15px;
+    }
+
+    /* Contributors */
+    .contributor-badge {
+      display: flex;
+      align-items: center;
+      gap: 120px;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem;
+      background: white;
+      margin-bottom: 1.25rem;
+    }
+
+    .contributor-avatar {
+      width: auto;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: contain;
+      border: 3px solid #ddd;
+    }
+
+    .contributor-badge-img {
+      height: 100px;
+      border-radius: 12px;
+    }
+
+    .cta-box {
+      background-color: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Contributing to INTERNIFY</h1>
+      <p>Join our <a href="https://discord.com/invite/7YgmBhS3h">Discord</a> community and help make INTERNIFY better 🙌</p>
+    </div>
+
+    <div class="layout">
+      <!-- Left Panel -->
+      <div class="left-panel">
+
+        <!-- Contributor Badge System -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+              Contributor Badges 🏅
+            </h2>
+          </div>
+
+          <div class="card-content space-y-4">
+
+            <p class="text-sm">
+              To recognize the amazing people who help grow this project, we award badges based on your total
+              <strong>number of commits</strong>. Level up as you contribute!
+            </p>
+
+            <h3 class="section-title">🏆 Contribution Tiers</h3>
+
+            <div class="tier-row">
+              <img src="https://cdn.jsdelivr.net/gh/traitor09/todo@660a139bbb447f74c3c4a62a1ec8aa42a38ef9d6/badges-contributing/master/master.png" alt="Master">
+              <img src="https://cdn.jsdelivr.net/gh/traitor09/todo@660a139bbb447f74c3c4a62a1ec8aa42a38ef9d6/badges-contributing/master/gold.png" alt="Gold">
+              <img src="https://cdn.jsdelivr.net/gh/traitor09/todo@660a139bbb447f74c3c4a62a1ec8aa42a38ef9d6/badges-contributing/silver/silver2.png" alt="Silver II">
+              <img src="https://cdn.jsdelivr.net/gh/traitor09/todo@660a139bbb447f74c3c4a62a1ec8aa42a38ef9d6/badges-contributing/silver/silver1.png" alt="Silver I">
+              <img src="https://cdn.jsdelivr.net/gh/traitor09/todo@660a139bbb447f74c3c4a62a1ec8aa42a38ef9d6/badges-contributing/bronze/bronze2.png" alt="Bronze II">
+              <img src="https://cdn.jsdelivr.net/gh/traitor09/todo@660a139bbb447f74c3c4a62a1ec8aa42a38ef9d6/badges-contributing/bronze/bronze1.png" alt="Bronze I">
+              <img src="https://cdn.jsdelivr.net/gh/traitor09/todo@660a139bbb447f74c3c4a62a1ec8aa42a38ef9d6/badges-contributing/bronze/Contributor.png" alt="Contributor">
+            </div>
+
+            <p>
+              <strong>
+                <span style="margin-right:20px;">Master 35+</span>
+                <span style="margin-right:20px;">Gold 25+</span>
+                <span style="margin-right:20px;">Silver II 20+</span>
+                <span style="margin-right:20px;">Silver I 15+</span>
+                <span style="margin-right:20px;">Bronze II 10+</span>
+                <span style="margin-right:20px;">Bronze I 5+</span>
+                <span>New</span>
+              </strong>
+            </p>
+            <br>
+            <p class="text-sm text-muted">
+              Badges update automatically as your contributions grow!
+            </p>
+
+          </div>
+        </div>
+
+        <div>
+          <h1 class="section-title">Types of Contributions</h1>
+          <ul>
+            <li><strong>Bug Reports:</strong> Help identify and resolve issues</li>
+            <li><strong>Feature Requests:</strong> Suggest improvements</li>
+            <li><strong>Code Contributions:</strong> Submit changes or new features</li>
+            <li><strong>Documentation:</strong> Improve clarity and examples</li>
+          </ul>
+          <h1 class="section-title">Quick Links</h1>
+          <ul>
+  <li>
+    <a href="https://github.com/traitor09/todo" target="_blank" rel="noopener noreferrer" class="quick-link">
+      📚 Documentation
+    </a>
+  </li>
+
+  <li>
+    <a href="https://github.com/traitor09/todo/issues" target="_blank" rel="noopener noreferrer" class="quick-link">
+      🐛 Report Issues
+    </a>
+  </li>
+
+  <li>
+    <a href="https://discord.com/invite/7YgmBhS3h" target="_blank" rel="noopener noreferrer" class="quick-link">
+      💬 Discord Discussions
+    </a>
+  </li>
+</ul>
+
+        </div>
+
+      </div>
+
+      <!-- Right Panel -->
+      <div class="right-panel">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+              Our Contributors 💜
+            </h2>
+          </div>
+
+          <div class="card-content">
+            <p class="text-sm text-muted">
+              Each contributor helps move this project forward. These badges celebrate your hard work! 🎉
+            </p>
+
+            <div id="contributors-container"></div>
+
+            <div class="cta-box">
+              <p class="text-sm text-muted">
+                Want to see your name here? Start contributing today! Every commit creates impact 🚀
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const contributors = [
+      {
+        username: "gits-up",
+        badge: "https://cdn.jsdelivr.net/gh/traitor09/todo@4ea90913bbcea0a8cdf8ecd57fa09a8089a72048/badges-contributing/bronze/bronze2.png"
+      },
+      {
+        username: "Rahulraj35",
+        badge: "https://cdn.jsdelivr.net/gh/traitor09/todo@660a139bbb447f74c3c4a62a1ec8aa42a38ef9d6/badges-contributing/bronze/Contributor.png"
+      },
+      {
+        username: "traitor09",
+        badge: "https://cdn.jsdelivr.net/gh/traitor09/todo@660a139bbb447f74c3c4a62a1ec8aa42a38ef9d6/badges-contributing/master/master.png"
+      }
+    ];
+
+    async function loadContributors() {
+      const container = document.getElementById("contributors-container");
+
+      for (const c of contributors) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "contributor-badge";
+
+        const link = document.createElement("a");
+        link.href = `https://github.com/${c.username}`;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.style.display = "flex";
+        link.style.alignItems = "center";
+        link.style.gap = "20px";
+
+        const avatar = document.createElement("img");
+        avatar.src = `https://github.com/${c.username}.png`;
+        avatar.className = "contributor-avatar";
+
+        const badge = document.createElement("img");
+        badge.src = c.badge;
+        badge.className = "contributor-badge-img";
+
+        link.appendChild(avatar);
+        link.appendChild(badge);
+        wrapper.appendChild(link);
+        container.appendChild(wrapper);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadContributors);
+  </script>
+
+</body>
+</html>
