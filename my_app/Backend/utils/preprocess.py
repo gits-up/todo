@@ -54,7 +54,11 @@ def preprocess_internship_data(internship_data):
 
     if "Sector" in preprocessed_data and isinstance(preprocessed_data["Sector"], str):
         sector_lower = preprocessed_data["Sector"].lower()
-        root_word_sector = lemmatizer.lemmatize(sector_lower)
+        # Used try-catch for safe fallback testing
+        try:
+            root_word_sector = lemmatizer.lemmatize(sector_lower)
+        except:
+            root_word_sector = sector_lower
         preprocessed_data["Sector_processed"] = preprocessed_data.get("Sector", "").lower().strip()
 
         
